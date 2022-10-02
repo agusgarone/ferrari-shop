@@ -3,7 +3,6 @@ import DB from '../../../database/db';
 
 const AllProducts = async (req: IncomingMessage, res: ServerResponse) => {
     try{
-
         const db = new DB();
         const allEntries = await db.getAll();
         const length = allEntries.length;
@@ -18,10 +17,7 @@ const AllProducts = async (req: IncomingMessage, res: ServerResponse) => {
         res.end(
             JSON.stringify({length: 0, data: [], error: 'Algo ha salido mal'}),
         )
-
     }
-
-
 }
 
 export default AllProducts;
